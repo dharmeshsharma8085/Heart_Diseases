@@ -1,156 +1,91 @@
-# Heart_Diseases
-Heart Disease Prediction using Machine Learning – An end-to-end machine learning project for predicting the likelihood of heart disease using patient health data, including data preprocessing, exploratory data analysis, feature engineering, model training, evaluation, and prediction.
+# 🫀 Heart Disease Prediction System
 
+A Machine Learning web application that predicts the likelihood of heart disease based on patient health information.
 
-# ❤️ Heart Disease Prediction using Machine Learning
+The project covers the complete ML workflow — from data preprocessing and model comparison to building an interactive web application using Streamlit.
 
-## 📖 About
+## 🚀 Project Overview
 
-This project focuses on predicting the likelihood of heart disease using Machine Learning techniques. It follows a complete end-to-end machine learning workflow, including data preprocessing, exploratory data analysis (EDA), feature engineering, model training, evaluation, and prediction.
+The goal of this project is to build a binary classification model for predicting heart disease.
 
-The objective is to build a reliable classification model that can assist in identifying individuals at risk of heart disease based on various medical attributes.
-
----
-
-## 📊 Dataset Features
-
-The dataset includes medical attributes such as:
+The dataset contains health-related features such as:
 
 - Age
 - Sex
 - Chest Pain Type
 - Resting Blood Pressure
-- Cholesterol Level
+- Cholesterol
 - Fasting Blood Sugar
-- Resting ECG Results
+- Resting ECG
 - Maximum Heart Rate
 - Exercise-Induced Angina
-- ST Depression (Oldpeak)
-- Slope of ST Segment
-- Number of Major Vessels
-- Thalassemia
-- Target (Heart Disease)
+- Oldpeak
+- ST Slope
 
----
+Target variable:
 
-## 🚀 Project Workflow
+- `0` → No Heart Disease
+- `1` → Heart Disease
 
-1. Data Collection
-2. Data Cleaning
-3. Exploratory Data Analysis (EDA)
-4. Feature Engineering
-5. Feature Selection
-6. Data Visualization
-7. Model Training
-8. Model Evaluation
-9. Prediction on New Data
+## 🧠 Machine Learning Workflow
 
----
+The project includes:
 
-## 🤖 Machine Learning Algorithms
+- Data exploration and cleaning
+- Categorical feature encoding
+- Feature analysis using Pearson correlation
+- Train-test splitting
+- Feature scaling using StandardScaler
+- Training multiple classification algorithms
+- Model evaluation using Accuracy and F1 Score
+- Saving the trained model using Joblib
+- Building an interactive Streamlit interface
 
-- Logistic Regression
-- Decision Tree
-- Random Forest
-- Support Vector Machine (SVM)
-- K-Nearest Neighbors (KNN)
+## 🤖 Models Tested
 
----
+| Model | Accuracy | F1 Score |
+|---|---:|---:|
+| Logistic Regression | **86.96%** | **88.57%** |
+| K-Nearest Neighbors | 86.41% | 88.15% |
+| Naive Bayes | 85.33% | 86.83% |
+| Support Vector Machine | 84.78% | 86.79% |
+| Decision Tree | 78.26% | 80.20% |
 
-## 📈 Model Evaluation
+Based on the evaluation results, **Logistic Regression** was selected as the final model.
 
-The models are evaluated using:
+## 🖥️ Streamlit Web App
 
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC-AUC Score
-- Confusion Matrix
-- Cross Validation
+The project includes an interactive Streamlit application where users can enter health-related information and receive the model's prediction.
 
----
+The application:
 
-## 📚 Python Libraries
+1. Collects user input
+2. Converts categorical inputs into the required encoded format
+3. Matches the feature structure used during training
+4. Applies the saved StandardScaler
+5. Sends the processed input to the trained model
+6. Displays the predicted risk category
+
+## 🛠️ Technologies Used
 
 - Python
-- NumPy
 - Pandas
-- Matplotlib
-- Seaborn
+- NumPy
+- SciPy
 - Scikit-learn
-
----
-
-## 🛠 Technologies Used
-
-- Python
+- Streamlit
+- Joblib
 - Jupyter Notebook
-- Scikit-learn
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
 
----
+## 📂 Project Structure
 
-## 🎯 Learning Outcomes
-
-- Data Cleaning and Preprocessing
-- Exploratory Data Analysis
-- Feature Engineering
-- Classification Algorithms
-- Model Evaluation
-- Performance Comparison
-- Machine Learning Pipeline
-
----
-
-## 📂 Repository Structure
-
-```
+```text
 Heart-Disease-Prediction/
 │
-├── Dataset
-├── Data Preprocessing
-├── Exploratory Data Analysis
-├── Feature Engineering
-├── Model Training
-├── Model Evaluation
-├── Prediction
-├── Images
-└── README.md
-```
-
----
-
-## 🌍 Real-World Applications
-
-- Early Heart Disease Risk Assessment
-- Clinical Decision Support
-- Healthcare Analytics
-- Preventive Healthcare
-- Medical Research
-- AI-assisted Diagnosis
-
----
-
-## 🔮 Future Improvements
-
-- Hyperparameter Tuning
-- Feature Importance Analysis
-- Explainable AI (SHAP/LIME)
-- Streamlit Web Application
-- Model Deployment
-- Deep Learning Implementation
-- Real-Time Prediction API
-
----
-
-## 📜 License
-
-This repository is created for educational purposes and continuous learning.
-
----
-
-⭐ **If you found this project helpful, consider giving it a star!**
+├── app.py
+├── le_heart.pkl
+├── scaler.pkl
+├── columns.pkl
+├── requirements.txt
+├── README.md
+└── notebook.ipynb
